@@ -19,6 +19,13 @@ app.get('/api/version', async (req, res) => {
                 return false; 
             }
         });
+
+        const directApkUrl = `https://d.apkpure.com/b/APK/com.bandainamcoent.opbrww?version=latest`;
+
+        res.json({
+            status: "success",
+            latest_version: targetVersion,
+            direct_apk_url: directApkUrl
         });
 
     } catch (error) {
